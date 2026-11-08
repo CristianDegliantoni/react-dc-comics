@@ -14,8 +14,8 @@ const footerLinks = [
 
 function AppFooter() {
     return (
-        <footer>
-            <nav>
+        <footer className="app-footer">
+            <nav className="footer-nav">
                 <ul>
                     {footerLinks.map((link) => (
                         <li key={link.id}>

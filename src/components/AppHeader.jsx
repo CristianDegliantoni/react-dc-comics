@@ -1,3 +1,5 @@
+import dcLogo from "../assets/img/dc-logo.png";
+
 const navLinks = [
     { id: 1, text: "CHARACTERS", url: "#", current: false },
     { id: 2, text: "COMICS", url: "#", current: true },
@@ -12,20 +14,22 @@ const navLinks = [
 ];
 
 function AppHeader() {
-    return (<header>
-
-        <nav>
-            <ul>
-                {navLinks.map((link) => (
-                    <li key={link.id}>
-                        <a href={link.url}>{link.text}</a>
-                    </li>
-                ))}
-            </ul>
-
-        </nav>
-    </header >
-    )
+    return (
+        <header className="app-header">
+            <div className="header-logo">
+                <img src={dcLogo} alt="DC Logo" />
+            </div>
+            <nav className="header-nav">
+                <ul>
+                    {navLinks.map((link) => (
+                        <li key={link.id} className={link.current ? "active" : ""}>
+                            <a href={link.url}>{link.text}</a>
+                        </li>
+                    ))}
+                </ul>
+            </nav>
+        </header>
+    );
 }
 
 export default AppHeader;

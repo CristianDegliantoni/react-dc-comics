@@ -2,12 +2,12 @@ import comics from "./comics";
 
 function AppMain() {
     return (
-        <main>
+        <main className="app-main">
             <div className="comics-container">
                 {comics.map((comic) => (
                     <div key={comic.id} className="comic-card">
-                        <h3>{comic.title}</h3>
-                        <img src={comic.thumb} alt={comic.title} />
+                        <img src={comic.thumb} alt={comic.title} className="comic-img" />
+                        <h4 className="comic-title">{comic.title}</h4>
                     </div>
                 ))}
             </div>
